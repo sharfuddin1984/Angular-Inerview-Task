@@ -21,6 +21,8 @@ export class EmpFormComponent {
       fullName: '',
       address1: '',
       address2: '',
+      city: '',
+      country:'',
       zipCode: '',
       uploadPhoto: '',
       workExperience: '',      

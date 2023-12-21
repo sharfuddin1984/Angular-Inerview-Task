@@ -43,13 +43,19 @@
       </div>
       <div class="row">
         <div class="frm-group">
-          <label>Zip Code</label>
-          <input type="number" placeholder="Zipcode" onKeyPress="if(this.value.length==6) return false;"  formControlName="zipCode">
+          <label>City</label>
+          <input type="text" placeholder="City" formControlName="city">
         </div>
         <div class="frm-group">
-          <label>Work Experience</label>
-          <input type="number" onKeyPress="if(this.value.length==2) return false;"  placeholder="Work Experience"  formControlName="workExperience">
-        </div>          
+          <label>Country</label>
+          <input type="text" placeholder="Country" formControlName="country">
+        </div>
+      </div>
+      <div class="row">
+        <div class="frm-group">
+          <label>Zip Code</label>
+          <input type="number" placeholder="Zipcode" onKeyPress="if(this.value.length==6) return false;"  formControlName="zipCode">
+        </div>                 
       </div>        
       <div class="btn-group">
         <button>Cancel</button>
@@ -59,7 +65,13 @@
     <!-- ============== End Page1 ============= -->
 
     <!-- =================Page2 ================== -->
-    <div class="frm-container" *ngIf="page2">         
+    <div class="frm-container" *ngIf="page2">   
+      <div class="row">
+        <div class="frm-group">
+          <label>Work Experience</label>
+          <input type="number" onKeyPress="if(this.value.length==2) return false;"  placeholder="Work Experience"  formControlName="workExperience">
+        </div> 
+      </div>      
       <div class="row">
         <div class="frm-group company-name" >
           <label>Company Name</label>
