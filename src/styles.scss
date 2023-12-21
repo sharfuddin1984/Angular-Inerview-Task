@@ -7,9 +7,29 @@
 body{
   width:100%;
   min-height: 100vh;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  background: linear-gradient(135deg,#0d00ff, #00aaff);
+  // display: flex;  
+  // justify-content: center;
+  background: linear-gradient(135deg, #edf2f9 0%, #9ac1f5 100%);
   font-family: sans-serif;
+}
+main{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 20px;
+}
+.btn-emp-form{
+  color: #fff;
+  background: #222;     
+  outline: 0; 
+  border: 0;
+  padding: 10px 20px;
+  font-size: 16px;
+  border-radius: 5px;
+  transition: all 0.3s;
+  cursor: pointer;
+}
+.btn-emp-form:hover{
+  transform: scale(1.03);
 }

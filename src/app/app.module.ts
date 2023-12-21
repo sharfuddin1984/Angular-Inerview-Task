@@ -5,10 +5,16 @@ import { ReactiveFormsModule } from '@angular/forms';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
+import { EmpFormComponent } from './emp-form/emp-form.component';
+import { TaskContentComponent } from './task-content/task-content.component';
+import { PageNotFoundComponent } from './page-not-found/page-not-found.component';
 
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
+    EmpFormComponent,
+    TaskContentComponent,
+    PageNotFoundComponent
   ],
   imports: [
     BrowserModule,

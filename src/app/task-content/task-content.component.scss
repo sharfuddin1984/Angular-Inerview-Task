@@ -1,0 +1,48 @@
+.main-content{
+  background-color: #fff;
+  max-width: 1200px;
+  border-radius: 10px;
+  padding:50px 30px 100px;
+  h1{
+    color: #222;
+    font-weight: 600;
+  }
+  h2{
+    color: #333;
+    font-weight: 500;
+  }
+  h1,h2{
+    margin: 20px 0;
+    line-height: 40px;
+    strong{
+      color: #222;
+      font-weight: 600;
+    }
+    mark{
+      background-color:#ff7f50;
+    }    
+  }
+  .btn-group{
+    display: flex;
+    justify-content: flex-end;
+    button{      
+      background-color: transparent;
+      color: #0275d8;
+      position: relative;
+      border: 1px solid #0275d8;
+      padding: 7px 30px 7px 15px;
+      &::after{
+        content: "";
+        border: 3px solid transparent;
+        border-right: 3px solid #0275d8;
+        border-bottom: 3px solid #0275d8;
+        transform: rotate(-45deg);
+        position: absolute;
+        top: 10px;
+        right: 17px;
+        width: 7px;
+        height: 7px;
+      }
+    }
+  }
+}

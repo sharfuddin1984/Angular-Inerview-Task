@@ -1,0 +1,109 @@
+<div class="container">
+  <h1>
+    <img routerLink="/" src="../../assets/images/arrow-back.svg" alt="">
+    <span>Employee Info</span>    
+  </h1>
+  <form [formGroup]="empForm" (ngSubmit)="onFormSubmit()"> 
+    <!-- ============= Page1 ============== -->
+    <div class="frm-container" *ngIf="page1">
+      <!-- ===================Avtar Image =================-->
+      <div class="row">
+        <div class="avatar-upload">
+          <div class="avatar-edit">
+            <input type='file' id="imageUpload" formControlName="uploadPhoto" accept=".png, .jpg, .jpeg" #fileInput (change)="uploadFile($event)" />
+            <label for="imageUpload" *ngIf="editFile" [ngClass]="['custom-label', 'upload-image']"></label>
+            <label *ngIf="removeUpload" [ngClass]="['custom-label', 'remove-image']" (click)="removeUploadedFile()"></label>
+          </div>
+          <div class="avatar-preview">
+            <div id="imagePreview" [style.backgroundImage]="'url('+ imageUrl +')'">
+            </div>
+          </div>
+        </div>
+      </div>
+      <!-- =====================Emd Avtar Image ============-->
+      <div class="row">
+        <div class="frm-group">
+          <label>Title</label>
+          <input type="text" placeholder="Title"  formControlName="title">
+        </div>
+        <div class="frm-group">
+          <label>Full Name</label>
+          <input type="text" placeholder="Full Name" formControlName="fullName">
+        </div>
+      </div>
+      <div class="row">
+        <div class="frm-group">
+          <label>Address1</label>
+          <input type="text" placeholder="Address1" formControlName="address1">
+        </div>
+        <div class="frm-group">
+          <label>Address2</label>
+          <input type="text" placeholder="Address2" formControlName="address2">
+        </div>
+      </div>
+      <div class="row">
+        <div class="frm-group">
+          <label>Zip Code</label>
+          <input type="number" placeholder="Zipcode" onKeyPress="if(this.value.length==6) return false;"  formControlName="zipCode">
+        </div>
+        <div class="frm-group">
+          <label>Work Experience</label>
+          <input type="number" onKeyPress="if(this.value.length==2) return false;"  placeholder="Work Experience"  formControlName="workExperience">
+        </div>          
+      </div>        
+      <div class="btn-group">
+        <button>Cancel</button>
+        <button (click)="goNext()">Next >></button>
+      </div>    
+    </div>
+    <!-- ============== End Page1 ============= -->
+
+    <!-- =================Page2 ================== -->
+    <div class="frm-container" *ngIf="page2">         
+      <div class="row">
+        <div class="frm-group company-name" >
+          <label>Company Name</label>
+          <input type="text" formControlName="companyName" placeholder="Company Name">
+        </div>
+      </div>
+      <!--=============Dynamic Control ============= -->
+      <div class="row">
+        <div class="frm-group">            
+          <div formArrayName="dynamicInputs">
+            <div *ngFor="let input of dynamicInputs.controls; let i = index" class="company-name">
+              <input type="text" [formControlName]="i" placeholder="Company Name">               
+                <span  title="Remove Company" (click)="removeInput(i)" class="remove-icon">
+                  <img src="../assets/images/Delete-button.svg">                                       
+                </span>                 
+            </div>
+            <a class="add-company" title="Add Company" (click)="addInput()"><i>+</i>Add company</a> 
+          </div>
+        </div>
+      </div>
+      <!--=============End Dynamic Control ============= -->
+      <div class="row">
+        <div class="frm-group">
+          <label>From Period</label>
+          <input type="date" placeholder="From" formControlName="fromPeriod">
+        </div>
+        <div class="frm-group">
+          <label>To Period</label>
+          <input type="date" placeholder="To Period" formControlName="toPeriod">
+        </div>
+      </div>
+      <div class="row">
+        <div class="frm-group">
+          <label>Short Description</label>
+          <textarea name="short-description" formControlName="shortDescription"></textarea>
+        </div>            
+      </div>
+      <div class="btn-group">
+        <button (click)="goBack()" >
+          << Back
+        </button>
+        <button type="submit">Save</button>
+      </div>    
+    </div>  
+    <!-- ==================End Page2 ===================== -->    
+  </form>
+</div> 
